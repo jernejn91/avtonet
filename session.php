@@ -10,3 +10,12 @@ if (!isset($_SESSION['user_id'])&&(!in_array($_SERVER ['REQUEST_URI'],$allowed))
 }
 
 
+function admin_only(){
+    if (!$_SESSION['admin']) {
+        header('Location: index.php');
+    }
+
+
+}
+
+
